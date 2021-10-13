@@ -19,13 +19,13 @@
  bulid links && add to nav-bar
  */
 
-const navMenu = document.getElementById('navbar__list');
+const navMenu = document.querySelector('#navbar__list');
 for (let i = 1; i <= 3; i++) {
-    const section = document.createElement('li');
+    const navElement = document.createElement('li');
     const sections = document.createElement('a');
-    section.append(sections);
+    navElement.append(sections);
     sections.textContent = `Section${i}`;
-    navMenu.append(section);
+    navMenu.append(navElement);
 }
 const items = document.querySelectorAll('a');
 for (let i = 0; i < 3; i++) {
