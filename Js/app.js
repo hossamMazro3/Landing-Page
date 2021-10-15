@@ -47,3 +47,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+const sectionsContaner = document.getElementsByClassName('landing__container');
+
+// activeSection
+console.log(sectionsContaner);
+window.addEventListener('scroll', () => {
+    for (let i = 0; i < sectionsContaner.length; i++) {
+        const rectangle = sectionsContaner[i].getBoundingClientRect();
+        if (rectangle.top > 0 && rectangle.top < 240) {
+            //mark this section with css
+            navMenu.children[i].classList.add('activeNave');
+            sectionsContaner[i].classList.add('activeSection');
+        } else {
+            //remove marker of section
+            navMenu.children[i].classList.remove('activeNave');
+            sectionsContaner[i].classList.remove('activeSection');
+        }
+    }
+});
